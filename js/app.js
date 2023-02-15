@@ -33,27 +33,46 @@ const { image, title, text } = slide
 let arrowLeft = document.querySelector(".arrow-left");
 let arrowRight = document.querySelector(".arrow-right");
 let slideEl = document.querySelector(".slide")
+let descriptionEl = document.querySelector(".slide-description")
 let i = 0
 
 function pushBtn() {
     let imgString = `<img src="${slide[i].image}" alt="Current Slide">`
-    slideEl.innerHTML += imgString
-    console.log(i)
+    slideEl.innerHTML = imgString 
+}
+
+function descriptionPrint(){
+    let descriptionString = `<h2>${slide[i].title}</h2> <h3>${slide[i].text}</h3>`
+    descriptionEl.innerHTML = descriptionString
+}
+
+function looper(){
+    if(i === 5 ){
+        i = 0
+    } else if (i === -1 ){
+        i = 4
+    }
 }
 
 arrowRight.addEventListener("click",
     function () {
         console.log("click forward")
+        i++ 
+        console.log(i)
+        looper()
         pushBtn()
-        i++
+        descriptionPrint()
     }
 )
 
 arrowLeft.addEventListener("click",
     function () {
         console.log("click backwords")
-        pushBtn()
         i--
+        console.log(i)
+        looper()
+        pushBtn()
+        descriptionPrint()
     }
 
 ) 

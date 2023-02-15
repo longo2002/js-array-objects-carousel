@@ -1,3 +1,13 @@
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.slide{
+	border-radius: 25px;
+	overflow: hidden;
+}
+
 .slide img {
     width: 100%;
     aspect-ratio: 16/9;
@@ -27,4 +37,18 @@
 
 .carousel .carousel-arrow.arrow-right {
 	right: 20px;
+}
+
+.slide-description{
+	font-family: sans-serif;
+	text-align: center;
+	margin: 0 auto;
+	z-index: 9999;
+	width: 900px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 15px;
+	padding: 5px;
+	position: absolute;
+	top: 275px;
+	left: 150px;
 }
